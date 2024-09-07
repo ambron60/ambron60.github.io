@@ -5,18 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Branding</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Include Font Awesome for Social Media Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
             margin: 0;
             font-family: 'Poppins', sans-serif;
-            background-color: #f7f9fc;
+            background-color: #ffffff;
             color: #333;
         }
 
         /* Header styling */
         header {
-            position: relative;
-            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background-color: #fff;
         }
 
         header nav a {
@@ -30,47 +35,83 @@
             color: #0070f3;
         }
 
-        /* Hero section */
+        .hire-button {
+            padding: 10px 20px;
+            background-color: transparent;
+            border: 2px solid #333;
+            border-radius: 25px;
+            color: #333;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .hire-button:hover {
+            background-color: #0070f3;
+            color: white;
+            border-color: #0070f3;
+        }
+
+        /* Hero section styling */
         .hero-section {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 80vh;
-            padding: 100px 10% 0 10%; /* Added padding-top to align with the bottom of the menu bar */
+            padding: 60px 10%;
+            background-color: #ffffff;
+            color: #333;
         }
 
-        /* Left text section */
         .hero-text {
-            max-width: 50%;
+            max-width: 45%;
         }
 
         .hero-text h1 {
             font-size: 48px;
             font-weight: 600;
-            margin-bottom: 20px;
-            color: #0c0f16;
+            margin-bottom: 10px;
+            color: #333;
         }
 
-        .hero-text p {
+        .hero-text h2 {
             font-size: 18px;
-            color: #4f566b;
-            margin-bottom: 40px;
-            line-height: 1.6;
+            font-weight: 400;
+            color: #777;
+            margin-bottom: 30px;
         }
 
+        .social-icons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #0070f3;
+            color: white;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        /* Buttons */
         .cta-buttons {
             display: flex;
-            gap: 20px;
+            gap: 15px;
         }
 
         .cta-button {
             padding: 12px 30px;
             font-size: 16px;
-            text-transform: uppercase;
-            text-decoration: none;
             font-weight: 600;
+            text-transform: uppercase;
             border-radius: 30px;
-            display: inline-block;
+            border: 2px solid transparent;
+            text-decoration: none;
         }
 
         .cta-primary {
@@ -79,9 +120,9 @@
         }
 
         .cta-secondary {
-            background-color: white;
-            color: #0070f3;
-            border: 2px solid #0070f3;
+            background-color: transparent;
+            color: #333;
+            border: 2px solid #333;
         }
 
         .cta-primary:hover {
@@ -89,27 +130,21 @@
         }
 
         .cta-secondary:hover {
-            border-color: #005bb5;
-            color: #005bb5;
+            background-color: #0070f3;
+            color: white;
+            border-color: #0070f3;
         }
 
         /* Right image section */
         .hero-image {
-            max-width: 50%; /* Keeping the image at 50% */
-            margin-left: 30px; /* Adding margin to the left side of the image */
+            max-width: 50%;
+            position: relative;
         }
 
         .hero-image img {
             width: 100%;
-            height: 500px; /* Adjust height as needed */
-            object-fit: cover; /* Ensures the image is cropped to fit within the container */
-            border-radius: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-
-        .gray-text {
-            color: #888; /* A light gray color for contrast */
+            object-fit: cover;
+            border-radius: 10px;
         }
 
     </style>
@@ -119,22 +154,25 @@
 <header>
     <h2>SKYLABUS.TECH</h2>
     <nav>
-        <a href="#">Home</a>
-        <a href="#">Projects</a>
+        <a href="#">Research</a>
+        <a href="#">About Me</a>
         <a href="#">Blog</a>
-        <a href="#">Pages</a>
+        <a href="#">Contact</a>
     </nav>
 </header>
 
 <section class="hero-section">
     <div class="hero-text">
-        <h1><span class="gray-text">Hi there,</span> I'm Gianni</h1>
-        <p>
-            I'm a Cyber Threat Analyst and Technical Writer from Miami, Florida. I specialize in threat hunting, identifying emerging cyber threats, and sharing insights through detailed articles. My work involves researching advanced attack techniques, exploring evolving threat landscapes, and contributing actionable intelligence that helps cybersecurity professionals strengthen their defenses.
-        </p>
+        <h1>Hello, I'm Gianni</h1>
+        <h2>Cyber Threat Analyst & Technical Writer</h2>
+        <div class="social-icons">
+            <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
+            <a href="https://linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com"><i class="fab fa-github"></i></a>
+        </div>
         <div class="cta-buttons">
-            <a href="#" class="cta-button cta-primary">Get in touch</a>
-            <a href="#" class="cta-button cta-secondary">See my works</a>
+            <a href="#" class="cta-button cta-primary">See My Work</a>
+            <a href="#" class="cta-button cta-secondary">See My Resume</a>
         </div>
     </div>
     <div class="hero-image">
