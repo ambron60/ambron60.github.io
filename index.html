@@ -3,81 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>skylabus.com</title>
+    <title>Personal Branding</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #1a1a1a;
-            color: #ffffff;
-            font-family: Arial, sans-serif;
-            text-align: center;
             margin: 0;
-            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #E7ECF2;
+            color: #333;
         }
-
         header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        header nav a {
+            margin: 0 15px;
+            color: #333;
+            text-decoration: none;
+            font-weight: 300;
+        }
+        header nav a:hover {
+            color: #FF6F91; /* highlight color */
+        }
+        header .contact-button {
+            background-color: #FF6F91;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        main {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 100px 10%;
+            background: #E7ECF2;
+        }
+        .content {
+            max-width: 600px;
+        }
+        .content h1 {
+            font-size: 60px;
+            font-weight: 600;
+            margin: 0;
+        }
+        .content p {
+            font-size: 16px;
+            color: #777;
+            margin: 20px 0;
+        }
+        .content .btn {
             background-color: #333;
-            padding: 20px;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: bold;
+            border-radius: 5px;
         }
-
-        h1 {
-            font-size: 36px;
+        .content .btn:hover {
+            background-color: #555;
         }
-
-        p {
-            font-size: 20px;
-        }
-
-        .container {
-            margin: 50px;
-            padding: 20px;
-            background-color: #444;
-            border-radius: 10px;
-        }
-
-        .countdown {
-            font-size: 24px;
+        .image-container img {
+            max-width: 100%;
+            height: auto;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Coming Soon</h1>
-        <p>Welcome to my personal website</p>
-    </header>
 
-    <div class="container">
-        <p>Stay tuned! My personal website is under construction and will be live soon.</p>
-        <div class="countdown" id="countdown"></div>
+<header>
+    <div class="logo">
+        <h2>Me</h2>
     </div>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Pages</a>
+        <a href="#">Blog</a>
+        <a href="#">Contact</a>
+    </nav>
+    <a href="tel:+800100900" class="contact-button">+800 100 900</a>
+</header>
 
-    <script>
-        // Calculate the time remaining until your website goes live
-        const launchDate = new Date('2023-11-01T00:00:00').getTime();
-        const countdown = document.getElementById('countdown');
+<main>
+    <div class="content">
+        <p>I AM A</p>
+        <h1>DESIGNER</h1>
+        <p>Volutpat sit amet leo id, efficitur mattis turpis. Donec bibendum est. Proin ligula nisi.</p>
+        <button class="btn">Read More</button>
+    </div>
+    <div class="image-container">
+        <img src="img/IMG_3536.jpeg" alt="Designer Image">
+    </div>
+</main>
 
-        const updateCountdown = () => {
-            const currentDate = new Date().getTime();
-            const timeRemaining = launchDate - currentDate;
-
-            const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
-
-            countdown.innerHTML = `
-                ${days}d ${hours}h ${minutes}m ${seconds}s
-            `;
-
-            if (timeRemaining <= 0) {
-                countdown.innerHTML = 'Website is Live!';
-            }
-        };
-
-        // Update the countdown every second
-        setInterval(updateCountdown, 1000);
-
-        // Initial call to set the countdown
-        updateCountdown();
-    </script>
 </body>
 </html>
