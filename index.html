@@ -4,83 +4,137 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Branding</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
             margin: 0;
             font-family: 'Poppins', sans-serif;
-            background: #f4f4f4;
+            background-color: #f7f9fc;
             color: #333;
         }
 
-        /* Container for the hero section */
+        /* Header styling */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        header nav a {
+            margin: 0 15px;
+            color: #333;
+            text-decoration: none;
+            font-weight: 400;
+        }
+
+        header nav a:hover {
+            color: #0070f3;
+        }
+
+        /* Hero section */
         .hero-section {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 100vh;
+            height: 80vh;
             padding: 0 10%;
         }
 
-        /* Left side content */
+        /* Left text section */
         .hero-text {
             max-width: 50%;
         }
 
         .hero-text h1 {
-            font-size: 50px;
+            font-size: 48px;
             font-weight: 600;
             margin-bottom: 20px;
+            color: #0c0f16;
         }
 
         .hero-text p {
             font-size: 18px;
-            color: #555;
-            line-height: 1.5;
+            color: #4f566b;
+            margin-bottom: 40px;
+            line-height: 1.6;
         }
 
-        /* Right side image */
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .cta-button {
+            padding: 12px 30px;
+            font-size: 16px;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 30px;
+            display: inline-block;
+        }
+
+        .cta-primary {
+            background-color: #0070f3;
+            color: white;
+        }
+
+        .cta-secondary {
+            background-color: white;
+            color: #0070f3;
+            border: 2px solid #0070f3;
+        }
+
+        .cta-primary:hover {
+            background-color: #005bb5;
+        }
+
+        .cta-secondary:hover {
+            border-color: #005bb5;
+            color: #005bb5;
+        }
+
+        /* Right image section */
         .hero-image {
-            max-width: 50%;
-            height: auto;
+            max-width: 40%;
         }
 
         .hero-image img {
             width: 100%;
-            height: auto;
-            object-fit: cover;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
-        /* CTA button */
-        .cta-button {
-            background-color: #FF6F91;
-            color: white;
-            padding: 15px 30px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-top: 20px;
-            display: inline-block;
-        }
-
-        .cta-button:hover {
-            background-color: #FF5E80;
-        }
     </style>
 </head>
 <body>
 
+<header>
+    <h2>VONGE</h2>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Projects</a>
+        <a href="#">Blog</a>
+        <a href="#">Pages</a>
+    </nav>
+</header>
+
 <section class="hero-section">
     <div class="hero-text">
-        <h1>WELCOME TO MY VIRTUAL OFFICE.</h1>
-        <p>Memorable, distinct and unique—that's what YOU are.</p>
-        <p>Creating an eye-catching personal branded site can help you make your best online first impression. And that... can make all the difference in the world (wide web).</p>
-        <p>With over 250 million web and blog sites on the Internet, making a lasting impression on the web is super important. Be distinct and start building your brand online!</p>
-        <a href="#" class="cta-button">Get Started</a>
+        <h1>Hi there, I am Vanessa Marley</h1>
+        <p>
+            Photographer and Visual Content Strategist from Albany. I work as a lifestyle, product, and landscape photographer, creating images for a diverse range of requests, from online media to printed artwork.
+        </p>
+        <div class="cta-buttons">
+            <a href="#" class="cta-button cta-primary">Get in touch</a>
+            <a href="#" class="cta-button cta-secondary">See my works</a>
+        </div>
     </div>
     <div class="hero-image">
-        <img src="img/IMG_3536.jpeg" alt="Person Image">
+        <img src="path-to-your-image.jpeg" alt="Vanessa Marley">
     </div>
 </section>
 
