@@ -1,191 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Branding</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <!-- Include Font Awesome for Social Media Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background-color: #ffffff;
-            color: #333;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Gianni - Cyber Threat Analyst</title>
+  <style>
+    body {
+      font-family: 'Helvetica Neue', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+      line-height: 1.6;
+    }
 
-        /* Header styling */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 10%;
-            background-color: #fff;
-        }
+    header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #1c1c1e;
+      color: #f4f4f9;
+      text-align: center;
+    }
 
-        header nav a {
-            margin: 0 15px;
-            color: #333;
-            text-decoration: none;
-            font-weight: 400;
-        }
+    header h1 {
+      font-size: 2.5em;
+      margin: 0;
+      animation: fadeIn 2s ease-in-out;
+    }
 
-        header nav a:hover {
-            color: #0070f3;
-        }
+    header p {
+      font-size: 1.2em;
+      margin: 20px 0;
+    }
 
-        .hire-button {
-            padding: 10px 20px;
-            background-color: transparent;
-            border: 2px solid #333;
-            border-radius: 25px;
-            color: #333;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
 
-        .hire-button:hover {
-            background-color: #0070f3;
-            color: white;
-            border-color: #0070f3;
-        }
+    .profile-pic {
+      border-radius: 50%;
+      width: 350px;
+      height: 350px;
+      object-fit: cover;
+      border: 5px solid #333;
+      transition: transform 0.3s ease;
+    }
 
-        /* Hero section styling */
-        .hero-section {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 60px 10%;
-            background-color: #ffffff;
-            color: #333;
-        }
+    .profile-pic:hover {
+      transform: scale(1.05);
+    }
 
-        .hero-text {
-            max-width: 45%;
-        }
+    .content h2 {
+      font-size: 2em;
+      margin-bottom: 10px;
+      text-align: left; /* Align the heading to the left */
+    }
 
-        .hero-text h1 {
-            font-size: 48px;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: #333;
-        }
+    .content h2::after {
+      content: '';
+      display: block;
+      width: 100%; /* Extend the line to cover the paragraph width */
+      height: 2px; /* Make the line thinner */
+      background-color: #999; /* Lighter color for the line */
+      margin-top: 10px;
+    }
 
-        .hero-text h2 {
-            font-size: 18px;
-            font-weight: 400;
-            color: #777;
-            margin-bottom: 20px;
-        }
+    .content p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
 
-        .hero-text p {
-            font-size: 16px;
-            margin-bottom: 20px;
-            color: #555;
-            line-height: 1.7;
-        }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
 
-        .social-icons {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 40px;
-        }
+    .link-button {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: #1c1c1e;
+      color: #f4f4f9;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
 
-        .social-icons a {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background-color: #0070f3;
-            color: white;
-            text-align: center;
-            line-height: 40px;
-            border-radius: 50%;
-            text-decoration: none;
-            font-size: 18px;
-        }
+    .link-button:hover {
+      background-color: #333;
+    }
 
-        /* Buttons */
-        .cta-buttons {
-            display: flex;
-            gap: 15px;
-        }
+    /* Responsive design */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2em;
+      }
 
-        .cta-button {
-            padding: 12px 30px;
-            font-size: 16px;
-            font-weight: 600;
-            text-transform: uppercase;
-            border-radius: 30px;
-            border: 2px solid transparent;
-            text-decoration: none;
-        }
-
-        .cta-primary {
-            background-color: #0070f3;
-            color: white;
-        }
-
-        .cta-secondary {
-            background-color: transparent;
-            color: #333;
-            border: 2px solid #333;
-        }
-
-        .cta-primary:hover {
-            background-color: #005bb5;
-        }
-
-        .cta-secondary:hover {
-            background-color: #0070f3;
-            color: white;
-            border-color: #0070f3;
-        }
-
-        /* Right image section */
-        .hero-image {
-            max-width: 50%;
-            position: relative;
-        }
-
-        .hero-image img {
-            width: 100%;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-
-    </style>
+      header p {
+        font-size: 1em;
+      }
+    }
+  </style>
 </head>
 <body>
 
 <header>
-    <h2>SKYLABUS.TECH</h2>
-    <nav>
-        <a href="#">Work</a>
-        <a href="#">About Me</a>
-        <a href="#">Blog</a>
-        <a href="#">Contact</a>
-    </nav>
+  <div>
+    <img src="img/IMG_3536.jpeg" alt="" class="profile-pic">
+    <h1>Gianni Perez - Senior Cyber Threat Analyst</h1>
+    <p>Instructor | Researcher in AI, Network Science, and Complex Systems</p>
+  </div>
 </header>
 
-<section class="hero-section">
-    <div class="hero-text">
-        <h1>Hello, I'm Gianni</h1>
-        <p>
-            I'm a Cyber Threat Analyst and Technical Writer from Miami, Florida. I specialize in threat hunting, identifying emerging cyber threats, and sharing insights through detailed articles. My work involves researching advanced attack techniques, exploring evolving threat landscapes, and contributing actionable intelligence that helps cybersecurity professionals strengthen their defenses.
-        </p>
-        <div class="social-icons">
-            <a href="https://twitter.com"><i class="fab fa-twitter"></i></a>
-            <a href="https://linkedin.com"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com"><i class="fab fa-github"></i></a>
-        </div>
-        <div class="cta-buttons">
-            <a href="#" class="cta-button cta-secondary">See My CV</a>
-        </div>
-    </div>
-    <div class="hero-image">
-        <img src="img/IMG_3536.jpeg" alt="">
-    </div>
+<section class="content">
+  <h2>About Me</h2>
+  <p>I am a Senior Cyber Threat Analyst with a Master of Science in Management of Information Systems and a concentration in cybersecurity. With a passion for Artificial Intelligence, Network Science, Complex Systems, and Number Theory, I also contribute as an instructor and writer.</p>
+
+  <h2>Research Interests</h2>
+  <p>Artificial Intelligence, Network Science, Complex Systems, and Number Theory are at the core of my research. I am fascinated by the ways these fields intersect to address some of the most pressing technological and existential challenges of our time.</p>
+
+  <a href="mailto:gianniperez@gmail.com" class="link-button">Contact Me</a>
 </section>
 
 </body>
