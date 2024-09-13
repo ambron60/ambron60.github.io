@@ -28,7 +28,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      height: 60vh;
       background-color: #1c1c1e;
       color: #f4f4f9;
       text-align: center;
@@ -105,6 +105,55 @@
       background-color: #333;
     }
 
+    /* Button for toggling dark mode */
+    #darkModeToggle {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      padding: 10px 20px;
+      background-color: #1c1c1e;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* Dark mode styles */
+    body.dark-mode {
+      background-color: #333 !important; /* Ensure dark background */
+      color: #f4f4f9 !important; /* Ensure light text */
+    }
+
+    .social-icons a {
+      margin: 0;
+      width: 32px;
+      height: 32px;
+      display: inline-block;
+      text-decoration: none;
+      position: relative; /* Needed for the pseudo-element */
+      transition: transform 0.3s ease; /* Smooth transition for scaling */
+    }
+
+    .social-icons a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 50%;
+      background-color: #1c1c1e;
+      transition: width 0.3s ease, left 0.3s ease; /* Smooth underline effect */
+    }
+
+    .social-icons a:hover::after {
+      width: 100%; /* Expands the underline */
+      left: 0; /* Aligns the underline to the left */
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.1); /* Slight scaling on hover */
+    }
+
     /* Responsive design */
     @media (max-width: 768px) {
       header h1 {
@@ -128,6 +177,17 @@
 </header>
 
 <section class="content">
+  <div class="social-icons">
+    <a href="https://github.com/ambron60/" aria-label="GitHub">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M16,2.345c7.735,0,14,6.265,14,14-.002,6.015-3.839,11.359-9.537,13.282-.7,.14-.963-.298-.963-.665,0-.473,.018-1.978,.018-3.85,0-1.312-.437-2.152-.945-2.59,3.115-.35,6.388-1.54,6.388-6.912,0-1.54-.543-2.783-1.435-3.762,.14-.35,.63-1.785-.14-3.71,0,0-1.173-.385-3.85,1.435-1.12-.315-2.31-.472-3.5-.472s-2.38,.157-3.5,.472c-2.677-1.802-3.85-1.435-3.85-1.435-.77,1.925-.28,3.36-.14,3.71-.892,.98-1.435,2.24-1.435,3.762,0,5.355,3.255,6.563,6.37,6.913-.403,.35-.77,.963-.893,1.872-.805,.368-2.818,.963-4.077-1.155-.263-.42-1.05-1.452-2.152-1.435-1.173,.018-.472,.665,.017,.927,.595,.332,1.277,1.575,1.435,1.978,.28,.787,1.19,2.293,4.707,1.645,0,1.173,.018,2.275,.018,2.607,0,.368-.263,.787-.963,.665-5.719-1.904-9.576-7.255-9.573-13.283,0-7.735,6.265-14,14-14Z"></path></svg>
+    </a>
+    <a href="https://www.linkedin.com/in/gianni-perez/" aria-label="LinkedIn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M26.111,3H5.889c-1.595,0-2.889,1.293-2.889,2.889V26.111c0,1.595,1.293,2.889,2.889,2.889H26.111c1.595,0,2.889-1.293,2.889-2.889V5.889c0-1.595-1.293-2.889-2.889-2.889ZM10.861,25.389h-3.877V12.87h3.877v12.519Zm-1.957-14.158c-1.267,0-2.293-1.034-2.293-2.31s1.026-2.31,2.293-2.31,2.292,1.034,2.292,2.31-1.026,2.31-2.292,2.31Zm16.485,14.158h-3.858v-6.571c0-1.802-.685-2.809-2.111-2.809-1.551,0-2.362,1.048-2.362,2.809v6.571h-3.858V12.87h3.715v1.77c.61-.925,1.693-1.728,3.512-1.728,2.482,0,4.541,1.668,4.541,5.322v7.155Z"></path></svg>
+    </a>
+    <a href="https://x.com/ascalon60" aria-label="Twitter">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M31.977,6.08c-1.173,.518-2.43,.865-3.75,1.022,1.346-.813,2.378-2.098,2.862-3.632-1.26,.747-2.654,1.285-4.14,1.573-2.358-2.51-6.29-2.637-8.8-.28-1.032,.963-1.654,2.313-1.654,3.75v.84c-5.514-.262-10.49-2.922-13.802-7.238-.595,1.063-.903,2.263-.903,3.5,0,2.49,1.23,4.698,3.255,6-.966-.032-1.904-.297-2.712-.735v.073c0,3.478,2.48,6.403,5.944,7.088-.623,.175-1.275,.28-1.935,.28-.472,0-.927-.048-1.37-.13,.943,2.937,3.657,4.96,6.74,5.015-2.473,1.94-5.57,2.917-8.738,2.917-.567,0-1.138-.03-1.693-.098,3.158,2.03,6.912,3.16,10.917,3.16,13.094,0,20.261-10.85,20.261-20.261,0-.298-.007-.59-.02-.875,1.408-.998,2.614-2.252,3.577-3.673Z"></path></svg>
+    </a>
+  </div>
   <h2>About Me</h2>
   <p>I am a Senior Cyber Threat Analyst with a Master of Science in Management of Information Systems and a concentration in cybersecurity. With a passion for Artificial Intelligence, Network Science, Complex Systems, and Number Theory, I also contribute as an instructor and writer.</p>
 
@@ -137,5 +197,19 @@
   <a href="mailto:gianniperez@gmail.com" class="link-button" aria-label="Email me">Contact Me</a>
 </section>
 
+<!-- Dark mode toggle button -->
+<button id="darkModeToggle">Dark Mode</button>
+
+<script>
+// Dark mode toggle functionality
+const toggleButton = document.getElementById('darkModeToggle');
+const body = document.body;
+
+toggleButton.addEventListener('click', () => {
+  body.classList.toggle('dark-mode');
+  const isDarkMode = body.classList.contains('dark-mode');
+  toggleButton.textContent = isDarkMode ? 'Light Mode' : 'Dark Mode';
+});
+</script>
 </body>
 </html>
