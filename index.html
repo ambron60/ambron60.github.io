@@ -139,6 +139,13 @@
       color: #666;
       margin-top: 40px;
     }
+    .github-hosting a {
+      color: inherit; /* Matches the text color */
+      text-decoration: none; /* Removes underline */
+    }
+    .github-hosting a:hover {
+      text-decoration: underline; /* Underline on hover for subtle effect */
+    }
     @media (max-width: 768px) {
       header h1 {
         font-size: 2em;
@@ -181,7 +188,7 @@
   <a href="mailto:gianniperez@gmail.com" class="link-button" aria-label="Email me">Contact Me</a>
 
   <div class="github-hosting">
-    <p>Hosted by GitHub Pages</p>
+    <p>Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a></p>
   </div>
 </section>
 
