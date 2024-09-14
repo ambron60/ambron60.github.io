@@ -23,7 +23,6 @@
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
-
     header {
       display: flex;
       justify-content: center;
@@ -33,25 +32,21 @@
       color: #f4f4f9;
       text-align: center;
     }
-
     header h1 {
       font-size: 2.5em;
       margin: 0;
       animation: fadeIn 2s ease-in-out forwards;
     }
-
     header p {
       font-size: 1.2em;
       margin: 20px 0;
       animation: fadeIn 2s ease-in-out forwards;
     }
-
     section {
       padding: 60px 20px;
       max-width: 900px;
       margin: 0 auto;
     }
-
     .profile-pic {
       border-radius: 50%;
       width: 300px;
@@ -60,36 +55,30 @@
       border: 5px solid #333;
       transition: transform 0.3s ease;
     }
-
     .profile-pic:hover {
       transform: scale(1.05);
     }
-
     .content h2 {
       font-size: 2em;
       margin-bottom: 10px;
-      text-align: left; /* Align the heading to the left */
+      text-align: left;
     }
-
     .content h2::after {
       content: '';
       display: block;
-      width: 100%; /* Extend the line to cover the paragraph width */
-      height: 2px; /* Make the line thinner */
-      background-color: #999; /* Lighter color for the line */
+      width: 100%;
+      height: 2px;
+      background-color: #999;
       margin-top: 10px;
     }
-
     .content p {
       font-size: 1.2em;
       margin-bottom: 20px;
     }
-
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
-
     .link-button {
       display: inline-block;
       padding: 10px 20px;
@@ -100,12 +89,9 @@
       text-decoration: none;
       transition: background-color 0.3s ease;
     }
-
     .link-button:hover {
       background-color: #333;
     }
-
-    /* Button for toggling dark mode */
     #darkModeToggle {
       position: fixed;
       top: 10px;
@@ -117,23 +103,19 @@
       border-radius: 5px;
       cursor: pointer;
     }
-
-    /* Dark mode styles */
     body.dark-mode {
-      background-color: #333 !important; /* Ensure dark background */
-      color: #f4f4f9 !important; /* Ensure light text */
+      background-color: #333 !important;
+      color: #f4f4f9 !important;
     }
-
     .social-icons a {
       margin: 0;
       width: 32px;
       height: 32px;
       display: inline-block;
       text-decoration: none;
-      position: relative; /* Needed for the pseudo-element */
-      transition: transform 0.3s ease; /* Smooth transition for scaling */
+      position: relative;
+      transition: transform 0.3s ease;
     }
-
     .social-icons a::after {
       content: '';
       position: absolute;
@@ -142,31 +124,25 @@
       bottom: -5px;
       left: 50%;
       background-color: #1c1c1e;
-      transition: width 0.3s ease, left 0.3s ease; /* Smooth underline effect */
+      transition: width 0.3s ease, left 0.3s ease;
     }
-
     .social-icons a:hover::after {
-      width: 100%; /* Expands the underline */
-      left: 0; /* Aligns the underline to the left */
+      width: 100%;
+      left: 0;
     }
-
     .social-icons a:hover {
-      transform: scale(1.1); /* Slight scaling on hover */
+      transform: scale(1.1);
     }
-
     .github-hosting {
-      text-align: right; /* Right-align the text */
+      text-align: right;
       font-size: 0.7em;
-      color: #666; /* Subtle gray color for the text */
-      margin-top: 40px; /* Adds spacing after the Contact Me button */
+      color: #666;
+      margin-top: 40px;
     }
-
-    /* Responsive design */
     @media (max-width: 768px) {
       header h1 {
         font-size: 2em;
       }
-
       header p {
         font-size: 1em;
       }
@@ -177,7 +153,7 @@
 
 <header>
   <div>
-    <img src="img/IMG_3536.jpeg" alt="" class="profile-pic" loading="lazy">
+    <img src="img/IMG_3536.jpeg" alt="Gianni Perez" class="profile-pic" loading="lazy">
     <h1>Gianni Perez - Senior Cyber Threat Analyst</h1>
     <p>Instructor | Researcher in AI, Information Security, Network Science, and Complex Systems</p>
   </div>
@@ -195,6 +171,7 @@
       <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M31.977,6.08c-1.173,.518-2.43,.865-3.75,1.022,1.346-.813,2.378-2.098,2.862-3.632-1.26,.747-2.654,1.285-4.14,1.573-2.358-2.51-6.29-2.637-8.8-.28-1.032,.963-1.654,2.313-1.654,3.75v.84c-5.514-.262-10.49-2.922-13.802-7.238-.595,1.063-.903,2.263-.903,3.5,0,2.49,1.23,4.698,3.255,6-.966-.032-1.904-.297-2.712-.735v.073c0,3.478,2.48,6.403,5.944,7.088-.623,.175-1.275,.28-1.935,.28-.472,0-.927-.048-1.37-.13,.943,2.937,3.657,4.96,6.74,5.015-2.473,1.94-5.57,2.917-8.738,2.917-.567,0-1.138-.03-1.693-.098,3.158,2.03,6.912,3.16,10.917,3.16,13.094,0,20.261-10.85,20.261-20.261,0-.298-.007-.59-.02-.875,1.408-.998,2.614-2.252,3.577-3.673Z"></path></svg>
     </a>
   </div>
+
   <h2>About Me</h2>
   <p>I am a Senior Cyber Threat Analyst with a Master of Science in Management of Information Systems and a concentration in cybersecurity. With a passion for Artificial Intelligence, Network Science, Complex Systems, and Number Theory, I also contribute as an instructor and writer.</p>
 
@@ -202,25 +179,23 @@
   <p>Artificial Intelligence, Network Science, Complex Systems, and Number Theory are at the core of my research. I am fascinated by the ways these fields intersect to address some of the most pressing technological and existential challenges of our time.</p>
 
   <a href="mailto:gianniperez@gmail.com" class="link-button" aria-label="Email me">Contact Me</a>
-  <!-- Hosted by GitHub Pages message -->
+
   <div class="github-hosting">
     <p>Hosted by GitHub Pages</p>
   </div>
 </section>
 
-<!-- Dark mode toggle button -->
 <button id="darkModeToggle">Dark Mode</button>
 
 <script>
-// Dark mode toggle functionality
-const toggleButton = document.getElementById('darkModeToggle');
-const body = document.body;
+  const toggleButton = document.getElementById('darkModeToggle');
+  const body = document.body;
 
-toggleButton.addEventListener('click', () => {
-  body.classList.toggle('dark-mode');
-  const isDarkMode = body.classList.contains('dark-mode');
-  toggleButton.textContent = isDarkMode ? 'Light Mode' : 'Dark Mode';
-});
+  toggleButton.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    toggleButton.textContent = body.classList.contains('dark-mode') ? 'Light Mode' : 'Dark Mode';
+  });
 </script>
+
 </body>
 </html>
