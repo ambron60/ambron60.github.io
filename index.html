@@ -108,14 +108,10 @@
       background-color: #333 !important;
       color: #f4f4f9 !important;
     }
-    .social-icons a {
-      margin: 0;
-      width: 32px;
-      height: 32px;
-      display: inline-block;
-      text-decoration: none;
-      position: relative;
-      transition: transform 0.3s ease;
+    .social-icons {
+      display: flex;
+      justify-content: flex-end; /* Right-aligns the icons */
+      gap: 10px; /* Adds a small gap between icons */
     }
     .social-icons a::after {
       content: '';
