@@ -1,18 +1,19 @@
-/* General body and typography */
+/* General styling */
 body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f9;
+  background-color: #ffffff;
   color: #333;
   line-height: 1.6;
 }
 
+/* Header styling */
 header {
   background-color: #1c1c1e;
   color: #f4f4f9;
   text-align: center;
-  padding: 20px 0;
+  padding: 40px 20px;
 }
 
 header h1 {
@@ -25,37 +26,37 @@ header p {
   margin: 10px 0;
 }
 
-/* Blog content section */
+/* Blog posts section */
 .blog-posts {
-  padding: 20px 10px;
+  padding: 40px 20px;
   max-width: 850px;
   margin: 0 auto;
 }
 
+/* Individual blog post styling */
 .blog-post {
-  margin-bottom: 20px;
-}
-
-.blog-post h2 {
-  font-size: 1.8em;
   margin-bottom: 10px;
 }
 
-.blog-post p {
-  font-size: 1.1em;
-  margin-bottom: 20px;
+/* Centered image styling */
+.model-image {
+  display: block;
+  margin: 0 auto 30px auto;
+  width: 50%;
+  height: auto;
 }
 
-/* Image gallery section */
+/* Image gallery container */
 .image-gallery-container {
-  max-width: 850px;
-  margin: 20px auto 0 auto;
+  max-width: 800px; /* Constrain the gallery width */
+  margin: 0px auto; /* Center the gallery */
   padding: 20px;
   border: 2px solid #333;
   border-radius: 10px;
   background-color: #f4f4f9;
 }
 
+/* Image gallery grid */
 .image-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -71,16 +72,25 @@ header p {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Footer styling */
+.github-hosting {
+  text-align: center;
+  font-size: 0.8em;
+  color: #666;
+  margin-top: 20px;
+}
+
 /* Mobile optimizations */
 @media (max-width: 768px) {
-  /* Reduce gallery size for mobile */
+  /* Adjust gallery size for mobile */
   .image-gallery-container {
-    max-width: 680px; /* Reduced by about 20% for mobile */
+    width: 95%; /* Shrink the gallery for mobile */
   }
 
+  /* Adjust the image border radius and shadow */
   .image-gallery img {
     border-radius: 3px;
-    box-shadow: none; /* Simplify shadow for mobile */
+    box-shadow: none;
   }
 
   /* Center-align and adjust footer on mobile */
@@ -90,21 +100,12 @@ header p {
     text-align: center;
     font-size: 0.7em;
   }
-}
 
-/* Footer */
-footer {
-  text-align: right;
-  padding: 20px;
-  font-size: 0.8em;
-  color: #666;
-  background-color: #f4f4f9;
-}
+  header h1 {
+    font-size: 2em;
+  }
 
-/* Footer styling */
-.github-hosting {
-  text-align: center;
-  font-size: 0.8em;
-  color: #666;
-  margin-top: 20px;
+  header p {
+    font-size: 1em;
+  }
 }
