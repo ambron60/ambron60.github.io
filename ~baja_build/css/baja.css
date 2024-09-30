@@ -56,15 +56,15 @@ header p {
 }
 
 .image-gallery img {
-  width: 300px;
-  height: auto;
+  max-width: 100%; /* Ensures images don't exceed their container width */
+  height: auto;    /* Maintains the image's original aspect ratio */
   border-radius: 5px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 
 .image-gallery img:hover {
-  transform: scale(1.05);
+  transform: scale(1.05); /* Adds a zoom effect on hover */
 }
 
 /* Footer */
