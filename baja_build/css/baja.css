@@ -48,7 +48,7 @@ header p {
 
 /* Image gallery container */
 .image-gallery-container {
-  max-width: 800px; /* Constrain the gallery width */
+  max-width: 770px; /* Constrain the gallery width */
   margin: 0 auto; /* Center the gallery */
   padding: 20px;
   border: 2px solid #333;
@@ -84,7 +84,7 @@ header p {
 @media (max-width: 700px) {
   /* Adjust gallery size for mobile */
   .image-gallery-container {
-    width: 95%; /* Shrink the gallery for mobile */
+    width: 75%; /* Shrink the gallery for mobile */
   }
 
   /* Adjust the image border radius and shadow */
