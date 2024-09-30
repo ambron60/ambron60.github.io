@@ -33,7 +33,7 @@ header p {
 }
 
 .blog-post {
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .blog-post h2 {
@@ -48,27 +48,48 @@ header p {
 
 /* Image gallery section */
 .image-gallery-container {
-  max-width: 850px; /* Reduced maximum width of the gallery container */
-  margin: 0 auto; /* Centers the container */
-  padding: 20px; /* Adds padding inside the border */
-  border: 2px solid #333; /* Border around the gallery container */
-  border-radius: 10px; /* Rounded corners for the border */
-  background-color: #f4f4f9; /* Same background as body */
+  max-width: 850px;
+  margin: 20px auto 0 auto;
+  padding: 20px;
+  border: 2px solid #333;
+  border-radius: 10px;
+  background-color: #f4f4f9;
 }
 
 .image-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive image size */
-  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
 }
 
 .image-gallery img {
-  width: 100%; /* Ensures images fill the grid cell */
-  height: auto; /* Maintains aspect ratio */
-  object-fit: cover; /* Ensures images cover the space without distortion */
-  border: 2px solid #ccc; /* Lighter gray border around each image */
-  border-radius: 5px; /* Rounded corners for images */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Light shadow for effect */
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  /* Reduce gallery size for mobile */
+  .image-gallery-container {
+    max-width: 680px; /* Reduced by about 20% for mobile */
+  }
+
+  .image-gallery img {
+    border-radius: 3px;
+    box-shadow: none; /* Simplify shadow for mobile */
+  }
+
+  /* Center-align and adjust footer on mobile */
+  .github-hosting {
+    margin: 10px auto;
+    padding: 10px;
+    text-align: center;
+    font-size: 0.7em;
+  }
 }
 
 /* Footer */
@@ -78,4 +99,12 @@ footer {
   font-size: 0.8em;
   color: #666;
   background-color: #f4f4f9;
+}
+
+/* Footer styling */
+.github-hosting {
+  text-align: center;
+  font-size: 0.8em;
+  color: #666;
+  margin-top: 20px;
 }
