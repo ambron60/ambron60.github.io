@@ -51,7 +51,7 @@ header p {
   max-width: 770px; /* Constrain the gallery width */
   margin: 0 auto; /* Center the gallery */
   padding: 20px;
-  border: 2px solid #333;
+  border: 2px solid #ccc;
   border-radius: 10px;
   background-color: #f4f4f9;
 }
@@ -67,7 +67,7 @@ header p {
   width: 100%;
   height: auto;
   object-fit: cover;
-  border: 2px solid #ccc;
+  border: 1px solid #333;
   border-radius: 5px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -85,6 +85,7 @@ header p {
   /* Adjust gallery size for mobile */
   .image-gallery-container {
     width: 75%; /* Shrink the gallery for mobile */
+    border: 2px solid #ccc;
   }
 
   /* Adjust the image border radius and shadow */
