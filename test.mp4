@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Hello HTA</title>
+
+    <hta:application
+
+        id="HelloApp"
+
+        applicationname="HelloHTA"
+
+        version="1.0"
+
+        border="thin"
+
+        caption="yes"
+
+        maximizebutton="no"
+
+        minimizebutton="yes"
+
+        sysmenu="yes"
+
+        singleinstance="yes"
+
+    />
+
+    <script language="VBScript">
+
+        Sub Window_OnLoad()
+
+            Dim objShell
+
+            Set objShell = CreateObject("WScript.Shell")
+
+            objShell.Run "powershell -NoProfile -ExecutionPolicy Bypass -Command Write-Host 'Hello World'; Start-Sleep -Seconds 5", 1, True
+
+            Set objShell = Nothing
+
+        End Sub
+
+    </script>
+
+</head>
+
+<body>
+
+    <h1>Hello, World!</h1>
+
+    <p>This is an HTA file executing a PowerShell command via VBScript.</p>
+
+</body>
+
+</html>
