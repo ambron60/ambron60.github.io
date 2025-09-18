@@ -6,35 +6,48 @@
     <script>(function (w, d, s, l, i) {
         w[l] = w[l] || [];
         w[l].push({
-            'gtm.start':
-                new Date().getTime(), event: 'gtm.js'
+            'gtm.start': new Date().getTime(),
+            event: 'gtm.js'
         });
-        var f = d.getElementsByTagName(s)[0],
-            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+        const f = d.getElementsByTagName(s)[0];
+        const j = d.createElement(s);
+        const dl = l !== 'dataLayer' ? '&l=' + l : '';
         j.async = true;
-        j.src =
-            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
         f.parentNode.insertBefore(j, f);
     })(window, document, 'script', 'dataLayer', 'GTM-NCXZN85K');</script>
     <!-- End Google Tag Manager -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description"
-          content="Gianni Perez - Senior Cyber Threat Analyst, Instructor, and Researcher in AI, Information Theory, and Complex Systems.">
-    <meta name="keywords" content="Cyber Threat Analyst, AI, Network Science, Complex Systems, Information Security">
+    <meta name="description" content="Gianni Perez is a Senior Cyber Threat Analyst, instructor, and researcher focused on AI, information security, information theory, and complex systems.">
+    <meta name="keywords" content="Cyber Threat Analyst, AI, Network Science, Complex Systems, Information Security, Instructor">
+    <meta name="author" content="Gianni Perez">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://skylabus.tech/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://skylabus.tech/">
+    <meta property="og:title" content="Gianni Perez | Cyber Threat Analyst & Researcher">
+    <meta property="og:description" content="Senior Cyber Threat Analyst blending applied research in AI, information security, information theory, and complex systems.">
+    <meta property="og:image" content="https://skylabus.tech/img/IMG_3536.jpeg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gianni Perez | Cyber Threat Analyst & Researcher">
+    <meta name="twitter:description" content="Instructor and researcher exploring the intersection of AI, information security, and complex systems.">
+    <meta name="twitter:image" content="https://skylabus.tech/img/IMG_3536.jpeg">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <title>Welcome to SKYLABUS.TECH!</title>
+    <title>Gianni Perez | Cyber Threat Analyst & Researcher</title>
     <style>
         :root {
             color-scheme: light;
             --bg-color: #f4f4f9;
-            --text-color: #333333;
-            --accent-color: #1c1c1e;
+            --surface-color: rgba(255, 255, 255, 0.82);
+            --text-color: #2c2c2e;
+            --accent-color: #131316;
             --accent-text-color: #f4f4f9;
-            --divider-color: #999999;
-            --muted-color: #666666;
-            --button-hover: #333333;
+            --divider-color: rgba(99, 99, 102, 0.3);
+            --muted-color: #666873;
+            --link-color: #0057d9;
+            --button-hover: #33363f;
+            --shadow-color: rgba(15, 15, 15, 0.18);
         }
 
         html {
@@ -53,361 +66,615 @@
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        header {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 60vh;
-            padding: 60px 20px;
+        a {
+            color: var(--link-color);
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -100px;
+            left: 16px;
+            background-color: var(--accent-text-color);
+            color: var(--accent-color);
+            padding: 10px 16px;
+            border-radius: 6px;
+            font-weight: 600;
+            z-index: 1000;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.24);
+        }
+
+        .skip-link:focus {
+            top: 16px;
+        }
+
+        .site-header {
             background-color: var(--accent-color);
             color: var(--accent-text-color);
-            text-align: center;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            padding: 24px 20px 80px;
+        }
+
+        .top-bar {
+            max-width: 1100px;
+            margin: 0 auto 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .brand {
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--accent-text-color);
+            font-size: 0.95em;
+        }
+
+        .primary-nav ul {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .primary-nav a {
+            position: relative;
+            display: inline-block;
+            padding: 6px 0;
+            color: var(--accent-text-color);
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .primary-nav a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 100%;
+            height: 2px;
+            background-color: currentColor;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .primary-nav a:hover::after,
+        .primary-nav a:focus-visible::after {
+            transform: scaleX(1);
+        }
+
+        #darkModeToggle {
+            padding: 8px 18px;
+            background-color: transparent;
+            color: var(--accent-text-color);
+            border: 1px solid rgba(244, 244, 249, 0.6);
+            border-radius: 999px;
+            cursor: pointer;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        #darkModeToggle:hover,
+        #darkModeToggle:focus-visible {
+            background-color: rgba(244, 244, 249, 0.12);
+            border-color: var(--accent-text-color);
         }
 
         .hero {
-            max-width: 960px;
-            width: 100%;
+            max-width: 1100px;
             margin: 0 auto;
             display: flex;
-            flex-direction: column;
             align-items: center;
-            gap: 20px;
-        }
-
-        header h1 {
-            font-size: 2.5em;
-            margin: 0;
-            animation: fadeIn 2s ease-in-out forwards;
-        }
-
-        header p {
-            font-size: 1.2em;
-            margin: 20px 0;
-            animation: fadeIn 2s ease-in-out forwards;
-        }
-
-        section {
-            padding: 60px 20px;
-            max-width: 900px;
-            margin: 0 auto;
+            justify-content: space-between;
+            gap: 48px;
+            flex-wrap: wrap;
         }
 
         .profile-pic {
             border-radius: 50%;
-            width: clamp(160px, 26vw, 280px);
+            width: clamp(160px, 24vw, 260px);
             aspect-ratio: 1 / 1;
             object-fit: cover;
-            border: 5px solid var(--accent-text-color);
-            transition: transform 0.3s ease;
+            border: 5px solid rgba(244, 244, 249, 0.6);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .profile-pic:hover {
-            transform: scale(1.05);
+            transform: translateY(-6px);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.28);
         }
 
-        .content h2 {
-            font-size: 2em;
-            margin-bottom: 10px;
-            text-align: left;
+        .headline {
+            max-width: 540px;
         }
 
-        .content h2::after {
-            content: '';
-            display: block;
-            width: 100%;
-            height: 2px;
-            background-color: var(--divider-color);
-            margin-top: 10px;
+        .headline h1 {
+            font-size: clamp(2.3rem, 5vw, 3.4rem);
+            margin: 0 0 10px;
+            animation: fadeIn 1.2s ease-in-out forwards;
         }
 
-        .content p {
-            font-size: 1.2em;
-            margin-bottom: 20px;
+        .role {
+            font-size: 1em;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            opacity: 0.85;
+            margin-bottom: 14px;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+        .lead {
+            font-size: 1.15em;
+            margin: 0;
+        }
+
+        .cta-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 28px;
         }
 
         .link-button {
             display: inline-block;
-            margin-top: 25px;
-            padding: 10px 20px;
+            padding: 12px 26px;
             font-size: 1em;
-            background-color: var(--accent-color);
-            color: var(--accent-text-color);
-            border-radius: 10px;
+            background-color: var(--accent-text-color);
+            color: var(--accent-color);
+            border-radius: 999px;
             text-decoration: none;
-            transition: background-color 0.3s ease;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
         }
 
-        .link-button:hover {
-            background-color: var(--button-hover);
+        .link-button:hover,
+        .link-button:focus-visible {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+            background-color: rgba(244, 244, 249, 0.9);
         }
 
-        .link-button:focus-visible,
-        #darkModeToggle:focus-visible {
-            outline: 3px solid #4c8bf5;
-            outline-offset: 3px;
-        }
-
-        #darkModeToggle {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            padding: 10px 20px;
-            background-color: var(--accent-color);
+        .link-text {
+            font-weight: 600;
             color: var(--accent-text-color);
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            text-decoration: none;
+            border-bottom: 2px solid rgba(244, 244, 249, 0.4);
+            padding-bottom: 2px;
+            transition: border-color 0.3s ease;
         }
 
-        #darkModeToggle:hover {
-            background-color: var(--button-hover);
+        .link-text:hover,
+        .link-text:focus-visible {
+            border-color: var(--accent-text-color);
+        }
+
+        main {
+            background-color: var(--bg-color);
+        }
+
+        .section {
+            padding: 80px 20px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .section + .section {
+            border-top: 1px solid var(--divider-color);
+        }
+
+        .section-header {
+            margin-bottom: 32px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(1.8rem, 3vw, 2.4rem);
+            margin: 0 0 12px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 48px;
+            height: 3px;
+            background-color: var(--divider-color);
+        }
+
+        .section-subtitle {
+            margin: 0;
+            color: var(--muted-color);
+            max-width: 720px;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 24px;
+        }
+
+        .feature-card {
+            background-color: var(--surface-color);
+            padding: 28px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.32);
+            box-shadow: 0 20px 35px var(--shadow-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .feature-card h3 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 1.2em;
+        }
+
+        .feature-card:hover,
+        .feature-card:focus-within {
+            transform: translateY(-6px);
+            box-shadow: 0 28px 55px rgba(0, 0, 0, 0.24);
+            border-color: rgba(0, 87, 217, 0.35);
+        }
+
+        .insight-list {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .insight-list li {
+            margin-bottom: 10px;
+        }
+
+        .contact-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .social-links ul {
+            display: flex;
+            gap: 16px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background-color: var(--surface-color);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.18);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .social-links a:hover,
+        .social-links a:focus-visible {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 35px rgba(0, 0, 0, 0.24);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px 24px;
+            color: var(--muted-color);
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        footer a:hover,
+        footer a:focus-visible {
+            text-decoration: underline;
         }
 
         body.dark-mode {
             color-scheme: dark;
             --bg-color: #111315;
+            --surface-color: rgba(40, 40, 42, 0.92);
             --text-color: #f4f4f9;
-            --accent-color: #2c2c2e;
+            --accent-color: #161618;
             --accent-text-color: #f4f4f9;
-            --divider-color: #444444;
-            --muted-color: #aaaaaa;
+            --divider-color: rgba(84, 84, 88, 0.6);
+            --muted-color: #b4b6c1;
+            --link-color: #7f9eff;
             --button-hover: #3d3d40;
+            --shadow-color: rgba(0, 0, 0, 0.38);
         }
 
-        .social-icons {
-            margin-bottom: 40px;
-        }
-
-        .social-icons ul {
-            display: flex;
-            justify-content: flex-end;
-            gap: 12px;
-            padding: 0;
-            margin: 0;
-            list-style: none;
-        }
-
-        .social-icons a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            transition: transform 0.3s ease;
-        }
-
-        .social-icons a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 50%;
+        body.dark-mode .link-button {
             background-color: var(--accent-color);
-            transition: width 0.3s ease, left 0.3s ease;
+            color: var(--accent-text-color);
         }
 
-        .social-icons a:hover::after {
-            width: 100%;
-            left: 0;
+        body.dark-mode .feature-card {
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
-        .social-icons a:hover {
-            transform: scale(1.1);
+        body.dark-mode .social-links a {
+            border: 1px solid rgba(255, 255, 255, 0.12);
         }
 
-        .social-icons a:focus-visible {
-            outline: 3px solid var(--accent-color);
-            outline-offset: 4px;
-            transform: scale(1.05);
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .social-icons a:focus-visible::after {
-            width: 100%;
-            left: 0;
-        }
-
-        .github-hosting {
-            font-size: 0.85em;
-            color: var(--muted-color);
-        }
-
-        .github-hosting a {
-            color: inherit; /* Matches the text color */
-            text-decoration: none; /* Removes underline */
-        }
-
-        .github-hosting a:hover {
-            text-decoration: underline; /* Underline on hover for subtle effect */
-        }
-
-        footer {
-            text-align: center;
-            padding: 40px 20px 20px;
-            color: var(--muted-color);
-        }
-
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2em;
+        @media (max-width: 900px) {
+            .hero {
+                justify-content: center;
+                text-align: center;
             }
 
-            header p {
-                font-size: 1em;
+            .headline {
+                max-width: 640px;
             }
 
-            header {
-                padding: 40px 20px;
-                min-height: auto;
+            .cta-group {
+                justify-content: center;
             }
+        }
 
-            .social-icons ul {
+        @media (max-width: 720px) {
+            .top-bar {
                 justify-content: center;
             }
 
+            .primary-nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .primary-nav a::after {
+                display: none;
+            }
+
             .profile-pic {
-                margin-bottom: 20px;
+                margin-bottom: 24px;
             }
         }
 
-        @media (max-width: 480px) {
-            header h1 {
-                font-size: 1.6em;
+        @media (max-width: 520px) {
+            .section {
+                padding: 64px 20px;
             }
 
-            .content p {
-                font-size: 1.05em;
+            .primary-nav ul {
+                gap: 12px;
             }
 
-            .link-button {
-                width: 100%;
-                text-align: center;
+            .feature-card {
+                padding: 24px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation: none !important;
+                transition-duration: 0.001ms !important;
+                scroll-behavior: auto !important;
             }
         }
     </style>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Gianni Perez",
+            "jobTitle": "Senior Cyber Threat Analyst",
+            "url": "https://skylabus.tech/",
+            "image": "https://skylabus.tech/img/IMG_3536.jpeg",
+            "email": "mailto:gianniperez@gmail.com",
+            "sameAs": [
+                "https://x.com/ascalon60",
+                "https://github.com/ambron60/",
+                "https://www.linkedin.com/in/gianni-perez/"
+            ]
+        }
+    </script>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
 <!-- Google Tag Manager (noscript) -->
 <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NCXZN85K"
-            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NCXZN85K" height="0" width="0" style="display:none;visibility:hidden"></iframe>
 </noscript>
 <!-- End Google Tag Manager (noscript) -->
-<header>
+<header class="site-header" id="top">
+    <div class="top-bar" role="navigation" aria-label="Primary">
+        <a class="brand" href="#top">SKYLABUS.TECH</a>
+        <nav class="primary-nav" aria-label="Section navigation">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#focus">Focus Areas</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <button id="darkModeToggle" type="button" aria-pressed="false">Dark Mode</button>
+    </div>
     <div class="hero">
         <img src="img/IMG_3536.jpeg" alt="Gianni Perez" class="profile-pic" loading="lazy">
-        <h1>Gianni Perez - Senior Cyber Threat Analyst</h1>
-        <p>Instructor | Researcher in AI, Information Security, Information Theory, and Complex Systems</p>
+        <div class="headline">
+            <p class="role">Senior Cyber Threat Analyst</p>
+            <h1>Gianni Perez</h1>
+            <p class="lead">Instructor and researcher examining how artificial intelligence, information theory, and complex systems can strengthen modern information security.</p>
+            <div class="cta-group">
+                <a href="#contact" class="link-button" aria-label="View contact options">Work With Me</a>
+                <a href="mailto:gianniperez@gmail.com" class="link-text" aria-label="Email Gianni Perez">Email</a>
+            </div>
+        </div>
     </div>
 </header>
 
-<main>
-    <section class="content">
-        <nav class="social-icons" aria-label="Social links">
-            <ul>
-                <li>
-                    <a href="https://x.com/ascalon60" aria-label="X">
-                        <img src="img/x-social-media-black-icon.svg" alt="X" width="30" height="30">
-                    </a>
-                </li>
-                <li>
-                    <a href="https://github.com/ambron60/" aria-label="GitHub">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
-                            <path d="M16,2.345c7.735,0,14,6.265,14,14-.002,6.015-3.839,11.359-9.537,13.282-.7,.14-.963-.298-.963-.665,0-.473,.018-1.978,.018-3.85,0-1.312-.437-2.152-.945-2.59,3.115-.35,6.388-1.54,6.388-6.912,0-1.54-.543-2.783-1.435-3.762,.14-.35,.63-1.785-.14-3.71,0,0-1.173-.385-3.85,1.435-1.12-.315-2.31-.472-3.5-.472s-2.38,.157-3.5,.472c-2.677-1.802-3.85-1.435-3.85-1.435-.77,1.925-.28,3.36-.14,3.71-.892,.98-1.435,2.24-1.435,3.762,0,5.355,3.255,6.563,6.37,6.913-.403,.35-.77,.963-.893,1.872-.805,.368-2.818,.963-4.077-1.155-.263-.42-1.05-1.452-2.152-1.435-1.173,.018-.472,.665,.017,.927,.595,.332,1.277,1.575,1.435,1.978,.28,.787,1.19,2.293,4.707,1.645,0,1.173,.018,2.275,.018,2.607,0,.368-.263,.787-.963,.665-5.719-1.904-9.576-7.255-9.573-13.283,0-7.735,6.265-14,14-14Z"></path>
-                        </svg>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.linkedin.com/in/gianni-perez/" aria-label="LinkedIn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
-                            <path d="M26.111,3H5.889c-1.595,0-2.889,1.293-2.889,2.889V26.111c0,1.595,1.293,2.889,2.889,2.889H26.111c1.595,0,2.889-1.293,2.889-2.889V5.889c0-1.595-1.293-2.889-2.889-2.889ZM10.861,25.389h-3.877V12.87h3.877v12.519Zm-1.957-14.158c-1.267,0-2.293-1.034-2.293-2.31s1.026-2.31,2.293-2.31,2.292,1.034,2.292,2.31-1.026,2.31-2.292,2.31Zm16.485,14.158h-3.858v-6.571c0-1.802-.685-2.809-2.111-2.809-1.551,0-2.362,1.048-2.362,2.809v6.571h-3.858V12.87h3.715v1.77c.61-.925,1.693-1.728,3.512-1.728,2.482,0,4.541,1.668,4.541,5.322v7.155Z"></path>
-                        </svg>
-                    </a>
-                </li>
-            </ul>
-        </nav>
+<main id="main-content">
+    <section id="about" class="section">
+        <div class="section-header">
+            <h2>About</h2>
+        </div>
+        <p>I am a Senior Cyber Threat Analyst with a Master of Science in Management of Information Systems specializing in cybersecurity. My work bridges threat intelligence, strategic analysis, and instructor-led enablement for security teams navigating emerging technologies.</p>
+    </section>
 
-        <h2>About Me</h2>
-        <p>I am a Senior Cyber Threat Analyst with a Master of Science in Management of Information Systems, specializing in
-            cybersecurity. My expertise extends to teaching and writing, where I explore topics that bridge the gap between
-            emerging technologies and information security.</p>
+    <section id="focus" class="section">
+        <div class="section-header">
+            <h2>Focus Areas</h2>
+            <p class="section-subtitle">Where I bring technical research and analytical rigor together to help organizations stay ahead of adversaries.</p>
+        </div>
+        <div class="feature-grid">
+            <article class="feature-card">
+                <h3>Threat Intelligence</h3>
+                <p>End-to-end adversary tracking, threat hunting, and translating complex telemetry into concise direction for leaders and operators.</p>
+            </article>
+            <article class="feature-card">
+                <h3>AI & Security Innovation</h3>
+                <p>Exploring how machine learning and automation augment analysts, while evaluating risks, model trustworthiness, and responsible adoption.</p>
+            </article>
+            <article class="feature-card">
+                <h3>Complex Systems Thinking</h3>
+                <p>Applying network science and information theory to uncover hidden dependencies and strengthen resilience across socio-technical systems.</p>
+            </article>
+        </div>
+    </section>
 
-        <h2>Research Interests</h2>
-        <p>My research focuses on the intersection of Artificial Intelligence, Network Science, Complex Systems, and
-            Information Theory. These fields drive my passion for exploring innovative solutions to complex technological
-            and existential challenges.</p>
+    <section id="research" class="section">
+        <div class="section-header">
+            <h2>Research</h2>
+        </div>
+        <p>My research investigates the intersection of Artificial Intelligence, Network Science, Complex Systems, and Information Theory to surface new ways of understanding digital risk, resilience, and the human elements of cybersecurity.</p>
+        <ul class="insight-list">
+            <li>Designing analytical frameworks that fuse signals from large-scale data with human expertise.</li>
+            <li>Modeling cascading effects within complex infrastructures to improve anticipatory defense.</li>
+            <li>Studying how information flows can be measured and protected as AI systems evolve.</li>
+        </ul>
+    </section>
 
-        <a href="mailto:gianniperez@gmail.com" class="link-button" aria-label="Email me">Contact Me</a>
+    <section id="teaching" class="section">
+        <div class="section-header">
+            <h2>Teaching & Outreach</h2>
+        </div>
+        <p>I create learning experiences that demystify advanced security concepts for practitioners, helping teams apply rigorous analysis in the flow of their work.</p>
+        <ul class="insight-list">
+            <li>Developing curriculum that connects emerging threats with practical detection and response playbooks.</li>
+            <li>Mentoring analysts on analytical tradecraft, communication, and stakeholder alignment.</li>
+            <li>Sharing research insights with multidisciplinary communities to drive collaborative problem solving.</li>
+        </ul>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="section-header">
+            <h2>Contact</h2>
+        </div>
+        <p>Interested in collaborating or discussing research? Reach out and let&#39;s explore how we can work together.</p>
+        <div class="contact-actions">
+            <a href="mailto:gianniperez@gmail.com" class="link-button" aria-label="Email Gianni Perez">Contact Me</a>
+            <nav class="social-links" aria-label="Social links">
+                <ul>
+                    <li>
+                        <a href="https://x.com/ascalon60" aria-label="X" target="_blank" rel="noopener noreferrer">
+                            <img src="img/x-social-media-black-icon.svg" alt="X" width="24" height="24">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/ambron60/" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+                                <path d="M16,2.345c7.735,0,14,6.265,14,14-.002,6.015-3.839,11.359-9.537,13.282-.7,.14-.963-.298-.963-.665,0-.473,.018-1.978,.018-3.85,0-1.312-.437-2.152-.945-2.59,3.115-.35,6.388-1.54,6.388-6.912,0-1.54-.543-2.783-1.435-3.762,.14-.35,.63-1.785-.14-3.71,0,0-1.173-.385-3.85,1.435-1.12-.315-2.31-.472-3.5-.472s-2.38,.157-3.5,.472c-2.677-1.802-3.85-1.435-3.85-1.435-.77,1.925-.28,3.36-.14,3.71-.892,.98-1.435,2.24-1.435,3.762,0,5.355,3.255,6.563,6.37,6.913-.403,.35-.77,.963-.893,1.872-.805,.368-2.818,.963-4.077-1.155-.263-.42-1.05-1.452-2.152-1.435-1.173,.018-.472,.665,.017,.927,.595,.332,1.277,1.575,1.435,1.978,.28,.787,1.19,2.293,4.707,1.645,0,1.173,.018,2.275,.018,2.607,0,.368-.263,.787-.963,.665-5.719-1.904-9.576-7.255-9.573-13.283,0-7.735,6.265-14,14-14Z"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/gianni-perez/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 32 32" aria-hidden="true" focusable="false">
+                                <path d="M26.111,3H5.889c-1.595,0-2.889,1.293-2.889,2.889V26.111c0,1.595,1.293,2.889,2.889,2.889H26.111c1.595,0,2.889-1.293,2.889-2.889V5.889c0-1.595-1.293-2.889-2.889-2.889ZM10.861,25.389h-3.877V12.87h3.877v12.519Zm-1.957-14.158c-1.267,0-2.293-1.034-2.293-2.31s1.026-2.31,2.293-2.31,2.292,1.034,2.292,2.31-1.026,2.31-2.292,2.31Zm16.485,14.158h-3.858v-6.571c0-1.802-.685-2.809-2.111-2.809-1.551,0-2.362,1.048-2.362,2.809v6.571h-3.858V12.87h3.715v1.77c.61-.925,1.693-1.728,3.512-1.728,2.482,0,4.541,1.668,4.541,5.322v7.155Z"/>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </section>
 </main>
 
 <footer>
-    <div class="github-hosting">
-        <p>Hosted by <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a></p>
-    </div>
+    <p>&copy; <span id="currentYear">2024</span> Gianni Perez. Hosted by <a href="https://pages.github.com/" target="_blank" rel="noopener noreferrer">GitHub Pages</a>.</p>
 </footer>
-
-<button id="darkModeToggle" type="button" aria-pressed="false">Dark Mode</button>
 
 <script>
     const toggleButton = document.getElementById('darkModeToggle');
     const body = document.body;
+    const yearSpan = document.getElementById('currentYear');
     const THEME_STORAGE_KEY = 'preferred-theme';
 
-    const applyTheme = (isDark) => {
-        body.classList.toggle('dark-mode', isDark);
-        toggleButton.textContent = isDark ? 'Light Mode' : 'Dark Mode';
-        toggleButton.setAttribute('aria-pressed', String(isDark));
-    };
+    if (yearSpan) {
+        yearSpan.textContent = String(new Date().getFullYear());
+    }
 
-    const getStoredPreference = () => {
-        try {
-            return localStorage.getItem(THEME_STORAGE_KEY);
-        } catch (error) {
-            return null;
+    if (toggleButton) {
+        const applyTheme = (isDark) => {
+            body.classList.toggle('dark-mode', isDark);
+            toggleButton.textContent = isDark ? 'Light Mode' : 'Dark Mode';
+            toggleButton.setAttribute('aria-pressed', String(isDark));
+        };
+
+        const getStoredPreference = () => {
+            try {
+                return localStorage.getItem(THEME_STORAGE_KEY);
+            } catch (error) {
+                return null;
+            }
+        };
+
+        const setStoredPreference = (value) => {
+            try {
+                localStorage.setItem(THEME_STORAGE_KEY, value);
+            } catch (error) {
+                /* Ignore storage restrictions. */
+            }
+        };
+
+        const storedTheme = getStoredPreference();
+        const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        const prefersDark = mediaQuery.matches;
+
+        applyTheme(storedTheme ? storedTheme === 'dark' : prefersDark);
+
+        toggleButton.addEventListener('click', () => {
+            const isDark = !body.classList.contains('dark-mode');
+            applyTheme(isDark);
+            setStoredPreference(isDark ? 'dark' : 'light');
+        });
+
+        const handleSystemThemeChange = (event) => {
+            if (!getStoredPreference()) {
+                applyTheme(event.matches);
+            }
+        };
+
+        if (typeof mediaQuery.addEventListener === 'function') {
+            mediaQuery.addEventListener('change', handleSystemThemeChange);
+        } else if (typeof mediaQuery.addListener === 'function') {
+            mediaQuery.addListener(handleSystemThemeChange);
         }
-    };
-
-    const setStoredPreference = (value) => {
-        try {
-            localStorage.setItem(THEME_STORAGE_KEY, value);
-        } catch (error) {
-            /* Ignore storage write issues (e.g., private browsing). */
-        }
-    };
-
-    const storedTheme = getStoredPreference();
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const prefersDark = mediaQuery.matches;
-
-    applyTheme(storedTheme ? storedTheme === 'dark' : prefersDark);
-
-    toggleButton.addEventListener('click', () => {
-        const isDark = !body.classList.contains('dark-mode');
-        applyTheme(isDark);
-        setStoredPreference(isDark ? 'dark' : 'light');
-    });
-
-    const handleSystemThemeChange = (event) => {
-        if (!getStoredPreference()) {
-            applyTheme(event.matches);
-        }
-    };
-
-    if (typeof mediaQuery.addEventListener === 'function') {
-        mediaQuery.addEventListener('change', handleSystemThemeChange);
-    } else if (typeof mediaQuery.addListener === 'function') {
-        mediaQuery.addListener(handleSystemThemeChange);
     }
 </script>
 
