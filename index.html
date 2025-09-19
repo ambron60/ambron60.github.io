@@ -663,7 +663,7 @@
         }
     </script>
 </head>
-<body>
+<body class="dark-mode">
 <a class="skip-link" href="#main-content">Skip to main content</a>
 <!-- Google Tag Manager (noscript) -->
 <noscript>
@@ -824,7 +824,7 @@
         const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
         const prefersDark = mediaQuery.matches;
 
-        applyTheme(storedTheme ? storedTheme === 'dark' : prefersDark);
+        applyTheme(storedTheme ? storedTheme === 'dark' : true);
 
         toggleButton.addEventListener('click', () => {
             const isDark = !body.classList.contains('dark-mode');
